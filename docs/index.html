@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>美气 NG · Henry Hub 看板</title>
+  <base href="/ng-dashboard/" />
+  <link rel="stylesheet" href="./static/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <div class="top">
+      <div class="brand">
+        <h1>美气 NG · Henry Hub</h1>
+        <p>NYMEX 天然气九因子快照看板（GitHub Pages 静态版）</p>
+      </div>
+      <div class="pill"><span id="status">加载中…</span></div>
+    </div>
+
+    <div class="banner" style="margin-bottom:14px">
+      <div class="row" style="justify-content:space-between">
+        <div>
+          <div class="muted">季节</div>
+          <div style="font-weight:700" id="season">—</div>
+        </div>
+        <div>
+          <div class="muted">更新</div>
+          <div id="updated">—</div>
+        </div>
+        <div>
+          <div class="muted">倾向</div>
+          <div style="font-weight:700" id="bias">—</div>
+        </div>
+      </div>
+      <p id="summary" style="margin:10px 0 6px"></p>
+      <p class="muted" id="action" style="margin:0"></p>
+    </div>
+
+    <div class="grid grid-3" style="margin-bottom:14px">
+      <div class="card kpi">
+        <div class="l">最新价</div>
+        <div class="big" id="px">—</div>
+        <div class="muted" id="px-asof"></div>
+        <div class="row" style="margin-top:8px">
+          <div><div class="l">1日</div><div class="v" id="chg1">—</div></div>
+          <div><div class="l">5日</div><div class="v" id="chg5">—</div></div>
+        </div>
+      </div>
+      <div class="card kpi">
+        <div class="l">综合分（-100~+100）</div>
+        <div class="big" id="comp">—</div>
+        <div class="muted">正=利多 · 负=利空</div>
+      </div>
+      <div class="card kpi">
+        <div class="l">置信度</div>
+        <div class="big" id="conf">—</div>
+        <div class="muted">因子一致度 <span id="agree">—</span></div>
+      </div>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h2>价格 K 线</h2>
+        <div id="chart" class="chart"></div>
+      </div>
+      <div class="card">
+        <h2>九因子</h2>
+        <div id="factors"></div>
+      </div>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:14px">
+      <div class="card">
+        <h2>新闻</h2>
+        <ul class="list" id="news"></ul>
+      </div>
+      <div class="card">
+        <h2>事件 / 评分历史</h2>
+        <ul class="list" id="events"></ul>
+        <h2 style="margin-top:14px">最近评分</h2>
+        <ul class="list" id="history"></ul>
+      </div>
+    </div>
+
+    <p class="note">静态快照站：数据来自本地 NG 看板导出，不会自动联网刷新。研究用途，非投资建议。</p>
+  </div>
+  <script src="./static/app.js"></script>
+</body>
+</html>

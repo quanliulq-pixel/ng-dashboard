@@ -1,0 +1,34 @@
+:root{
+  --bg:#0b0f14;--panel:#121821;--panel2:#171e29;--border:#243041;
+  --text:#e8eef7;--muted:#8b9bb0;--accent:#3d9cf0;
+  --up:#ef5350;--down:#26a69a;--warn:#f59e0b;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.45}
+a{color:var(--accent)}
+.app{max-width:1100px;margin:0 auto;padding:20px 16px 48px}
+.top{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;justify-content:space-between;margin-bottom:18px}
+.brand h1{margin:0;font-size:1.35rem}
+.brand p{margin:4px 0 0;color:var(--muted);font-size:.9rem}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:var(--panel2);border:1px solid var(--border);font-size:.85rem;color:var(--muted)}
+.grid{display:grid;gap:14px}
+@media(min-width:860px){.grid-3{grid-template-columns:repeat(3,1fr)}.grid-2{grid-template-columns:1.2fr .8fr}}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px}
+.card h2{margin:0 0 10px;font-size:1rem}
+.muted{color:var(--muted)}
+.big{font-size:2rem;font-weight:700;letter-spacing:-.02em}
+.row{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:baseline}
+.kpi .l{font-size:.78rem;color:var(--muted)}
+.kpi .v{font-size:1.15rem;font-weight:650}
+.pos{color:var(--up)}.neg{color:var(--down)}.flat{color:var(--muted)}
+.factor{display:grid;grid-template-columns:1fr auto;gap:8px;padding:10px 0;border-top:1px solid var(--border)}
+.factor:first-of-type{border-top:none;padding-top:0}
+.bar{height:8px;border-radius:999px;background:#1c2633;overflow:hidden;margin-top:6px}
+.bar>i{display:block;height:100%;border-radius:999px}
+.list{margin:0;padding:0;list-style:none}
+.list li{padding:8px 0;border-top:1px solid var(--border);font-size:.92rem}
+.list li:first-child{border-top:none}
+.chart{height:320px;width:100%}
+.note{margin-top:18px;font-size:.8rem;color:var(--muted)}
+.banner{padding:12px 14px;border-radius:var(--radius);border:1px solid var(--border);background:linear-gradient(135deg,#152033,#121821)}
